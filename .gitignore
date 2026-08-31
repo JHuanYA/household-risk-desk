@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.streamlit/
+data/local/*
+!data/local/.gitkeep
+.env
+.pytest_cache/
+.DS_Store
+*.pyc
