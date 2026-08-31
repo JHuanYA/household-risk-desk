@@ -2,7 +2,7 @@
 
 **Household Financial Risk Desk** · PRD-HFRD-001
 
-> **🚀 快速体验（推荐）**：双击打开 [`web/index.html`](web/index.html) 即可，无需安装任何环境、无需联网（Plotly.js 需首次联网加载）。
+> **🚀 快速体验（推荐）**：双击打开 [`web/index.html`]([web/index.html](https://jhuanya.github.io/household-risk-desk/web/index.html)) 即可，无需安装任何环境、无需联网（Plotly.js 需首次联网加载）。
 >
 > 或启动 Streamlit 版（需要 Python）：`streamlit run app.py`
 
