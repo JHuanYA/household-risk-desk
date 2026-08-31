@@ -305,18 +305,6 @@ node_modules/
 
 ---
 
-## 用 Trae 继续开发
-
-1. 用 Trae 打开本仓库
-2. 对话时带上：`@.trae/rules/project_rules.md` `@data/DEMO_CHECK.md`
-3. 每次改动后用 **HTML 版**端到端验证（浏览器 Console `JSON.stringify({E: App.current.metrics.E, overall: App.current.limits.overall})`）
-4. 推荐第一句：
-
-```text
-@.trae/rules/project_rules.md
-@data/DEMO_CHECK.md
-只分析、不要改代码：对照 DEMO_CHECK 和 web/js/engine.js，列出当前还缺的计算与校验。
-```
 
 ---
 
