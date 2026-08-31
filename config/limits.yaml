@@ -1,0 +1,18 @@
+# 风险限额配置
+# 绿 = 达标；黄 = 破目标未破硬限额；红 = 破硬限额或计算异常
+
+lim_target_months: 6        # 流动性目标月数
+lim_yellow_below: 6         # 流动性黄灯阈值 (<6)
+lim_red_below: 3            # 流动性红灯阈值 (<3)
+
+lev_yellow_above: 0.40       # 杠杆黄灯阈值 (>40%)
+lev_red_above: 0.60         # 杠杆红灯阈值 (>60%)
+
+dsti_yellow_above: 0.40      # DSTI黄灯阈值 (>40%)
+dsti_red_above: 0.50        # DSTI红灯阈值 (>50%)
+
+invest_yellow_above: 0.60    # 投资/净值黄灯 (>60%)
+invest_red_above: 0.80       # 投资/净值红灯 (>80%)
+
+concentration_yellow_above: 0.70  # 单一类别/净值黄灯 (>70%)
+concentration_red_above: 0.90    # 单一类别/净值红灯 (>90%)
