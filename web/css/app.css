@@ -1,0 +1,500 @@
+/* =========================================================
+   家庭风险驾驶舱 — 深色主题 CSS
+   与 Streamlit 版色彩对齐：背景 #0D1117 / 面板 #161B22 / 边框 #30363D
+   ========================================================= */
+
+:root {
+  --bg: #0D1117;
+  --bg-elev: #161B22;
+  --panel: #1C2128;
+  --border: #30363D;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-muted: #6E7681;
+  --accent: #58A6FF;
+
+  --green: #3FB950;
+  --yellow: #F0B429;
+  --red: #F85149;
+
+  --radius: 8px;
+  --spacing: 16px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0; padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* =========================================================
+   布局：顶部导航 + 页面容器
+   ========================================================= */
+
+.hf-app { min-height: 100vh; }
+
+.hf-nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; align-items: center; gap: 4px;
+  padding: 10px 20px;
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+}
+.hf-nav-brand {
+  font-weight: 700; font-size: 15px; color: var(--accent);
+  margin-right: 20px;
+}
+.hf-nav-brand span { color: var(--text-secondary); font-weight: 400; font-size: 12px; margin-left: 6px; }
+.hf-nav a {
+  padding: 6px 12px; border-radius: 6px;
+  color: var(--text-secondary); font-size: 13px;
+  text-decoration: none;
+  transition: all 0.15s;
+}
+.hf-nav a:hover { background: var(--panel); color: var(--text-primary); text-decoration: none; }
+.hf-nav a.active { background: var(--accent); color: #0D1117; font-weight: 600; }
+
+.hf-page {
+  padding: 24px 28px;
+  max-width: 1400px; margin: 0 auto;
+}
+.hf-page h1 { margin: 0 0 4px 0; font-size: 22px; }
+.hf-page p.sub { margin: 0 0 20px 0; color: var(--text-secondary); font-size: 13px; }
+
+.hf-row { display: flex; gap: var(--spacing); flex-wrap: wrap; }
+.hf-col-2 { flex: 1; min-width: 280px; }
+.hf-col-3 { flex: 1; min-width: 220px; }
+.hf-col-4 { flex: 1; min-width: 180px; }
+
+/* =========================================================
+   卡片 & Section
+   ========================================================= */
+
+.hf-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.hf-section {
+  display: flex; align-items: center; justify-content: space-between;
+  margin: 24px 0 12px;
+}
+.hf-section-title {
+  font-size: 15px; font-weight: 600; color: var(--text-primary);
+  border-left: 3px solid var(--accent);
+  padding-left: 10px;
+}
+.hf-section-right { color: var(--text-secondary); font-size: 12px; }
+
+/* =========================================================
+   Pill / 灯号胶囊
+   ========================================================= */
+
+.hf-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* =========================================================
+   指标卡（Dashboard 用）
+   ========================================================= */
+
+.hf-metric-card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+  flex: 1; min-width: 180px;
+}
+.hf-metric-label {
+  color: var(--text-secondary); font-size: 12px; margin-bottom: 6px;
+}
+.hf-metric-value {
+  font-size: 24px; font-weight: 700; color: var(--text-primary);
+  margin-bottom: 6px; letter-spacing: -0.5px;
+}
+.hf-metric-hint {
+  color: var(--text-muted); font-size: 12px;
+}
+.hf-tone-good .hf-metric-value { color: var(--green); }
+.hf-tone-warn .hf-metric-value { color: var(--yellow); }
+.hf-tone-bad  .hf-metric-value { color: var(--red); }
+.hf-tone-neutral .hf-metric-value { color: var(--text-primary); }
+
+/* =========================================================
+   告警卡
+   ========================================================= */
+
+.hf-alert {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--yellow);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin-bottom: 8px;
+}
+.hf-alert-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; margin-bottom: 4px;
+}
+.hf-alert-body {
+  color: var(--text-secondary); font-size: 12px;
+}
+.hf-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* =========================================================
+   综合灯（Dashboard 顶部大卡）
+   ========================================================= */
+
+.hf-big-light {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: var(--spacing);
+}
+.hf-big-light-dot {
+  width: 48px; height: 48px; border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 24px currentColor;
+}
+.hf-big-light-body h2 { margin: 0 0 6px 0; font-size: 18px; }
+.hf-big-light-body p { margin: 0; color: var(--text-secondary); font-size: 13px; }
+.hf-big-light-tags { margin-top: 10px; display: flex; gap: 6px; flex-wrap: wrap; }
+
+/* =========================================================
+   对比表（压力测试）
+   ========================================================= */
+
+.hf-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.hf-compare-table th, .hf-compare-table td {
+  padding: 10px 14px; text-align: right; font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.hf-compare-table th:first-child, .hf-compare-table td:first-child { text-align: left; color: var(--text-secondary); }
+.hf-compare-table thead th {
+  background: var(--bg-elev); color: var(--text-secondary); font-weight: 600; font-size: 12px;
+}
+.hf-compare-table tr:last-child td { border-bottom: none; }
+.hf-compare-table .hf-diff-pos { color: var(--green); }
+.hf-compare-table .hf-diff-neg { color: var(--red); }
+
+/* =========================================================
+   击穿清单
+   ========================================================= */
+
+.hf-breach-list { list-style: none; padding: 0; margin: 0; }
+.hf-breach-list li {
+  padding: 8px 12px;
+  border: 1px solid var(--border); border-radius: 6px;
+  margin-bottom: 6px;
+  background: var(--bg-elev);
+  display: flex; align-items: center; gap: 12px;
+}
+.hf-breach-from { color: var(--text-muted); text-decoration: line-through; font-size: 12px; }
+.hf-breach-arrow { color: var(--text-muted); }
+.hf-breach-to { color: var(--red); font-weight: 600; }
+
+/* =========================================================
+   可编辑表格
+   ========================================================= */
+
+.hf-editable-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+.hf-editable {
+  width: 100%; border-collapse: collapse;
+  font-size: 13px;
+}
+.hf-editable thead th {
+  background: var(--bg-elev);
+  color: var(--text-secondary);
+  font-weight: 600; font-size: 12px;
+  padding: 10px 12px; text-align: left;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.hf-editable tbody td {
+  padding: 4px; border-bottom: 1px solid var(--border);
+}
+.hf-editable tbody tr:last-child td { border-bottom: none; }
+.hf-editable tbody tr:hover { background: rgba(88,166,255,0.04); }
+
+.hf-input {
+  width: 100%; padding: 6px 8px;
+  background: var(--bg); border: 1px solid transparent;
+  border-radius: 4px; color: var(--text-primary);
+  font-size: 13px; font-family: inherit;
+  outline: none;
+}
+.hf-input:focus {
+  border-color: var(--accent);
+  background: var(--bg-elev);
+}
+.hf-input[type="number"] { text-align: right; font-variant-numeric: tabular-nums; }
+.hf-select { cursor: pointer; }
+
+.hf-cell-btn {
+  width: 26px; height: 26px; border-radius: 4px;
+  border: none; background: transparent;
+  color: var(--text-muted); font-size: 16px; cursor: pointer;
+  transition: all 0.15s;
+}
+.hf-cell-btn:hover { background: var(--red); color: #fff; }
+
+.hf-editable-add {
+  padding: 8px 12px;
+  background: var(--bg-elev);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.hf-btn {
+  padding: 6px 14px; border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel); color: var(--text-primary);
+  cursor: pointer; font-size: 13px; font-family: inherit;
+  transition: all 0.15s;
+}
+.hf-btn:hover { border-color: var(--accent); color: var(--accent); }
+.hf-btn-primary {
+  background: var(--accent); color: #0D1117; border-color: var(--accent); font-weight: 600;
+}
+.hf-btn-primary:hover { filter: brightness(1.1); color: #0D1117; }
+
+/* =========================================================
+   限额说明列表
+   ========================================================= */
+
+.hf-limit-list { display: flex; flex-direction: column; gap: 10px; }
+.hf-limit-row {
+  display: grid;
+  grid-template-columns: 120px 200px 1fr 1fr 2fr;
+  gap: 16px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.hf-limit-row .hf-limit-name { font-weight: 600; }
+.hf-limit-row .hf-limit-yellow { color: var(--yellow); font-size: 12px; }
+.hf-limit-row .hf-limit-red   { color: var(--red);    font-size: 12px; }
+.hf-limit-row .hf-limit-cur   { color: var(--text-secondary); font-size: 12px; }
+
+/* =========================================================
+   Split 布局（图表 + 列表并排）
+   ========================================================= */
+
+.hf-split { display: flex; gap: var(--spacing); }
+.hf-split > div { flex: 1; min-width: 0; }
+.hf-split-3-2 > :first-child { flex: 3; }
+.hf-split-2-1 > :first-child { flex: 2; }
+
+/* =========================================================
+   图表容器（Plotly）
+   ========================================================= */
+
+.hf-chart {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 8px;
+}
+
+/* =========================================================
+   工具条
+   ========================================================= */
+
+.hf-toolbar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 0; margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.hf-toolbar select {
+  padding: 6px 10px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 6px;
+  color: var(--text-primary); font-size: 13px;
+}
+
+/* =========================================================
+   其他
+   ========================================================= */
+
+.hf-divider {
+  height: 1px; background: var(--border);
+  margin: 16px 0; border: none;
+}
+
+.hf-muted { color: var(--text-secondary); font-size: 12px; }
+.hf-subtle { color: var(--text-muted); font-size: 11px; }
+
+@media (max-width: 768px) {
+  .hf-split { flex-direction: column; }
+  .hf-limit-row { grid-template-columns: 1fr; gap: 6px; }
+  .hf-nav { flex-wrap: wrap; }
+}
+
+/* =========================================================
+   输入校验 —— 错误横幅 / 行级红色 / 单元格红色
+   ========================================================= */
+
+.hf-banner {
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 12px 0;
+  border: 1px solid transparent;
+  font-size: 13px;
+}
+.hf-banner-error {
+  background: rgba(248, 81, 73, 0.10);
+  border-color: var(--red);
+  color: var(--text-primary);
+}
+.hf-banner-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--red);
+}
+.hf-error-item {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  padding: 2px 0;
+}
+.hf-error-item b {
+  color: var(--red);
+  margin-right: 4px;
+}
+
+/* 表格行/单元格红色标记 */
+tr.hf-row-error {
+  background: rgba(248, 81, 73, 0.06) !important;
+}
+tr.hf-row-error:hover {
+  background: rgba(248, 81, 73, 0.12) !important;
+}
+td.hf-error-cell {
+  background: rgba(248, 81, 73, 0.14) !important;
+  border-left: 2px solid var(--red);
+}
+td.hf-error-cell:first-child {
+  border-left: none;
+}
+.hf-input-error {
+  border-color: var(--red) !important;
+  box-shadow: 0 0 0 1px var(--red) inset;
+}
+
+/* =========================================================
+   自定义情景滑块
+   ========================================================= */
+
+.hf-slider-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 16px;
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.hf-slider-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hf-slider-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+.hf-slider-head label {
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.hf-slider-val {
+  font-family: "SF Mono", Consolas, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  background: rgba(88, 166, 255, 0.12);
+  padding: 2px 8px;
+  border-radius: 4px;
+  min-width: 48px;
+  text-align: center;
+}
+.hf-slider-foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* range slider 深色主题样式 */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  cursor: grab;
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+  box-shadow: 0 0 0 1px var(--accent);
+  cursor: grab;
+}

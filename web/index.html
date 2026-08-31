@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人/家庭风险监控台 — Household Risk Desk</title>
+  <link rel="stylesheet" href="css/app.css">
+  <!-- Plotly.js CDN -->
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js" charset="utf-8"></script>
+</head>
+<body>
+<div class="hf-app">
+
+  <!-- ============ 顶部导航 ============ -->
+  <nav class="hf-nav">
+    <div class="hf-nav-brand">🏠 家庭风险驾驶舱 <span>Household Risk Desk</span></div>
+    <a href="#dashboard">总览</a>
+    <a href="#data">数据输入</a>
+    <a href="#balance">资产负债</a>
+    <a href="#cashflow">现金流</a>
+    <a href="#stress">压力测试</a>
+    <a href="#limits">限额与假设</a>
+  </nav>
+
+  <!-- ============ 6 个页面容器 ============ -->
+  <main>
+    <div id="page-dashboard" class="hf-page" data-page="dashboard"></div>
+    <div id="page-data"       class="hf-page" data-page="data"       style="display:none"></div>
+    <div id="page-balance"    class="hf-page" data-page="balance"    style="display:none"></div>
+    <div id="page-cashflow"   class="hf-page" data-page="cashflow"   style="display:none"></div>
+    <div id="page-stress"     class="hf-page" data-page="stress"     style="display:none"></div>
+    <div id="page-limits"     class="hf-page" data-page="limits"     style="display:none"></div>
+  </main>
+
+</div>
+
+<!-- ============ 脚本加载顺序：engine → state → ui → charts → pages ============ -->
+<script src="js/engine.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/pages.js"></script>
+
+<!-- ============ 启动 ============ -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    try {
+      App.init();      // 加载数据、localStorage、重算
+      Pages.init();    // 初始化路由、渲染当前页
+      console.log("✅ Household Risk Desk ready. Open index.html directly — no server needed.");
+    } catch (e) {
+      console.error("Startup failed:", e);
+      document.body.innerHTML = '<div style="padding:40px;color:#F85149;font-family:monospace">' +
+        '<b>❌ 启动失败</b><br><br>' + e + '<br><br>' +
+        '请确认所有 JS 文件都在 web/js/ 下，且 Plotly CDN 可访问。</div>';
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+item_id,name,type,category,amount,currency,liquidity,owner,monthly_payment,note
+CASH_HSBC,汇丰港币活期,asset,cash,80000,HKD,high,本人,,应急金主体
+CASH_USD_MM,美元货币基金,asset,cash,5000,USD,high,本人,,高流动性；按汇率折港币
+INV_HK,港股及基金组合,asset,investment,350000,HKD,medium,本人,,可变现但有价格波动，不得计入应急金
+INV_US,美股ETF,asset,investment,15000,USD,medium,本人,,可变现但有价格波动，不得计入应急金
+PROP_HOME,自住物业估值,asset,property,5500000,HKD,low,共同,,自住房；可变现差，不得当现金
+OTHER_MPF,强积金估算,asset,other,20000,HKD,low,本人,,提取受限
+LIAB_MTG,住宅按揭余额,liability,mortgage,2400000,HKD,,共同,18000,供款以现金流表为准
+LIAB_CC,信用卡应还余额,liability,consumer,45000,HKD,,本人,3000,计划还款额见现金流
