@@ -245,7 +245,7 @@ HTML 版额外支持 **自定义滑块**：6 个冲击系数（income_mult / pro
 
 ### HTML 版（最方便）
 
-1. 打开 `web/index.html`
+1. 打开 `[`web/index.html`]([web/index.html](https://jhuanya.github.io/household-risk-desk/web/index.html))`
 2. 进入 📝 **数据输入** 页
 3. 直接在表格里改数值、加行、删行，汇率也可以编辑
 4. 数据自动存浏览器 localStorage，换浏览器要手动复制
@@ -262,9 +262,7 @@ HTML 版额外支持 **自定义滑块**：6 个冲击系数（income_mult / pro
 
 ---
 
-## 测试与验收
-
-最低要求：
+## 测试
 
 - [x] Demo 可启动，所有页面能打开
 - [x] 净值、LIM、GAP 与 `DEMO_CHECK.md` 一致（误差 < 1 HKD）
@@ -274,23 +272,8 @@ HTML 版额外支持 **自定义滑块**：6 个冲击系数（income_mult / pro
 - [x] HTML 版输入负数/非法值 → 阻断计算 + 红色高亮
 - [x] HTML 版与 Streamlit 版数值一致
 
-面试演示约 6 分钟：限额工具定位 → 风险事件定义 → 现状灯号 → 失业+投资下跌 → 需补多少现金 → 局限（手工数据、粗冲击）。
+限额工具定位 → 风险事件定义 → 现状灯号 → 失业+投资下跌 → 需补多少现金 → 局限（手工数据、粗冲击）。
 
----
-
-## 隐私与 Git
-
-`.gitignore` 至少包含：
-
-```gitignore
-data/local/
-.venv/
-__pycache__/
-.env
-node_modules/
-```
-
-建议仓库保持 **Private**。对外展示只用 Demo。
 
 ---
 
