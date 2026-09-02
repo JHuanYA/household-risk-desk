@@ -2,7 +2,7 @@
 
 **Household Financial Risk Desk** · PRD-HFRD-001
 
-> **🚀 快速体验（推荐）**：双击打开 [`web/index.html`]([web/index.html](https://jhuanya.github.io/household-risk-desk/web/index.html)) 即可，无需安装任何环境、无需联网（Plotly.js 需首次联网加载）。
+> **🚀 快速体验（推荐）**：双击打开 `web/index.html` https://jhuanya.github.io/household-risk-desk/web/index.html 即可，无需安装任何环境、无需联网（Plotly.js 需首次联网加载）。
 >
 > 或启动 Streamlit 版（需要 Python）：`streamlit run app.py`
 
@@ -245,7 +245,7 @@ HTML 版额外支持 **自定义滑块**：6 个冲击系数（income_mult / pro
 
 ### HTML 版（最方便）
 
-1. 打开 `[`web/index.html`]([web/index.html](https://jhuanya.github.io/household-risk-desk/web/index.html))`
+1. 打开 `web/index.html` https://jhuanya.github.io/household-risk-desk/web/index.html
 2. 进入 📝 **数据输入** 页
 3. 直接在表格里改数值、加行、删行，汇率也可以编辑
 4. 数据自动存浏览器 localStorage，换浏览器要手动复制
